@@ -71,7 +71,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     async def update_domain_interval(now):
         """Update the OVH entry."""
         for domain in domains_list:
-            await _update_ovh(hass, session, domain, user, password)
+            await _update_ovh(session, domain, user, password)
 
     async_track_time_interval(hass, update_domain_interval, interval)
 
