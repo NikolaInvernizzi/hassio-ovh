@@ -64,7 +64,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     session = async_get_clientsession(hass)
 
     for domain in domains_list:
-        result = await _update_ovh(hass, session, domain, user, password)
+        result = await _update_ovh(session, domain, user, password)
         if not result:
             return False
 
